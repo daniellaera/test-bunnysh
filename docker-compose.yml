@@ -1,0 +1,13 @@
+version: '3'
+services:
+  api:
+    container_name: test-bunnysh-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:8080}
+      - SPRING_PROFILES_ACTIVE=prod
+    ports:
+      - "9000:9000"
+    restart: always
