@@ -1,5 +1,0 @@
-components:
-  - kind: Application
-    name: spring-rest-api
-    environment:
-      FRONTEND_URL: 'https://{{ components.frontend.ingress.hosts[0].hostname }}'

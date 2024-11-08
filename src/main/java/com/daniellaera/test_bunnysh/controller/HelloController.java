@@ -20,7 +20,7 @@ public class HelloController {
     public String hello() {
         List<String> messages = Arrays.asList(
                 "Hello World!",
-                "Test another title",
+                "Frontend URL : " + frontendUrl,
                 "API Status: Operational",
                 "Environment: Production"
         );
