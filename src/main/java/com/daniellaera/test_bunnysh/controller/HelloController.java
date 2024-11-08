@@ -5,6 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/")
 public class HelloController {
@@ -14,6 +18,13 @@ public class HelloController {
 
     @GetMapping
     public String hello() {
-        return "Hello World! Frontend URL: " + frontendUrl;
+        List<String> messages = Arrays.asList(
+                "Hello World!",
+                "Test another title",
+                "API Status: Operational",
+                "Environment: Production"
+        );
+
+        return messages.stream().collect(Collectors.joining("\n"));
     }
 }
